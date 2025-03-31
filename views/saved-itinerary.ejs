@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Itineraries</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #24c259; /* Green background */
+            color: white; /* White text for contrast */
+        }
+        
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+        }
+        
+        .itinerary { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            background: white; /* Keeps itinerary boxes readable */
+            color: black; /* Ensures text inside remains readable */
+        }
+        
+        button {
+            background-color: #006400; /* Dark Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background-color: #004d00; /* Slightly darker green on hover */
+        }
+    </style>    
+</head>
+<body>
+
+    <h1>Your Saved Itineraries</h1>
+    
+    <div class="container">
+        <% if (itineraries.length > 0) { 
+            let currentTripId = null; // To track unique trips
+        %>
+            <% itineraries.forEach((itinerary, index) => { %>
+                <% if (currentTripId !== itinerary.trip_id) { 
+                    currentTripId = itinerary.trip_id; 
+                %>
+                    <h2><%= itinerary.trip_name %> - <%= itinerary.destination %></h2> <!-- Show trip details once -->
+                <% } %>
+                <div class="itinerary">
+                    <p>Day <%= itinerary.day_number %>: <%= itinerary.activity_order %></p>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No saved itineraries found.</p>
+        <% } %>
+    </div>
+    
+
+    <button class="btn" onclick="location.href='/'">Back to Dashboard</button>
+    <button class="btn" onclick="location.href='/logout'">Logout</button>
+</body>
+</html>

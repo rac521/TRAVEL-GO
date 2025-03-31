@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Go</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eafaea;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            align-items: center;
+            background-color: #064e1f; /* Dark Green */
+            padding: 15px 30px;
+            color: white;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #28a745; /* Light Green */
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #1f5c34;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #165026;
+        }
+
+        .btn-alt {
+            background-color: white;
+            color: #1f5c34;
+            border: 1px solid #1f5c34;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-alt:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .logout-btn {
+            background:#165026 ;
+            color: white;
+            border-color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            /* margin-left: auto; Moves the logout button to the right */
+        }
+
+        .logout-btn:hover {
+            background: #28a745;
+            color:#333
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #b2f2bb; /* Light Green */
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #194f33;
+            /* Indian flag saffron */
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #138808;
+            /* Indian flag green */
+        }
+
+        .auth-btn {
+            background-color: #fff;
+            color: #194f33;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .auth-btn:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background-image: linear-gradient(rgba(111, 245, 167, 0.502), rgba(117, 249, 154, 0.5)), url('/api/placeholder/1200/500');
+            background-size: cover;
+            background-position: center;
+            color: #194f33;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #194f33;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #194f33;
+            transform: translateY(-3px);
+        }
+
+        /* States Section */
+        .states-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .state-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .state-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .state-img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .state-info {
+            padding: 15px;
+        }
+
+        .state-info h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .state-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #194f33;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FF9933;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Login/Sign Up Form */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .auth-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #FF9933;
+            outline: none;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF9933;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-btn:hover {
+            background-color: #e68a2e;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .form-footer a {
+            color: #FF9933;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Itinerary Planning Page */
+        .planning-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .main-content {
+            flex: 3;
+            min-width: 500px;
+        }
+
+        .filter-section {
+            margin-bottom: 25px;
+        }
+
+        .filter-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .checkboxes label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .checkboxes input {
+            margin-right: 10px;
+        }
+
+        .range-slider {
+            margin: 10px 0;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .place-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .place-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .place-info {
+            padding: 15px;
+        }
+
+        .place-info h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .place-info p {
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .itinerary-builder {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .itinerary-builder h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .selected-places {
+            min-height: 100px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .place-pill {
+            display: inline-block;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .place-pill .remove {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #ff5252;
+        }
+
+        .optimize-btn {
+            background-color: #138808;
+            /* Indian flag green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .map-container {
+            height: 400px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .planning-container {
+                flex-direction: column;
+            }
+
+            .main-content,
+            .sidebar {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Go - Plan Your Journey</title>
+    <link rel="stylesheet" href="/index.css"> <!-- Link to CSS -->
+   
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">TRAVEL GO</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/">Destinations</a>
+            <a href="/">Itineraries</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+        </nav>
+        <% if (userId) { %>
+            <button class="logout-btn" onclick="location.href='/logout'">Logout</button>
+        <% } %>
+    </header>
+
+    <!-- Hero Section -->
+    
+    <body>
+       
+    
+            </div>
+        </nav>
+    
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="container hero-content">
+                    <% if (userId) { %>
+                        <h2>Welcome, <%= username %>!</h2>
+                    <% } %>
+                    <h1>Discover the Magic of India</h1>
+                    <p>Plan your perfect trip across all 28 states and 8 union territories with our customizable itinerary
+                    planner</p>
+                    <% if (!userId) { %>
+                        <a class="btn" href="/login">Login</a>
+                        <a class="btn" href="/signup">Sign Up</a>
+                    <% } else { %>
+                        <button class="btn" onclick="location.href='/startplanning'">Start Planning</button>
+                        <button class="btn" onclick="location.href='/saved-plans'">Saved Plans</button>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+    
+        <section class="states-section">
+            <div class="container">
+                <h2 class="section-title">Explore States of India</h2>
+                <div class="states-grid">
+                    <!-- Sample states - would be dynamically generated from database -->
+                    <div class="state-card">
+                        <img src="./src/rajasthan.jpg" alt="Rajasthan" class="state-img">
+                        <div class="state-info">
+                            <h3>Rajasthan</h3>
+                            <p>The land of kings with majestic forts, vibrant culture, and colorful festivals.</p>
+                            <a href="/rajasthan" class="btn">Explore</a>
+                        </div>
+                    </div>
+    
+                    <div class="state-card">
+                        <img src="/src/kerala.jpg" alt="Kerala" class="state-img">
+                        <div class="state-info">
+                            <h3>Kerala</h3>
+                            <p>God's own country with serene backwaters, lush greenery, and beautiful beaches.</p>
+                            <a href="/kerala" class="btn">Explore</a>
+                        </div>
+                    </div>
+    
+                    <div class="state-card">
+                        <img src="./src/goa.jpg" alt="Goa" class="state-img">
+                        <div class="state-info">
+                            <h3>Goa</h3>
+                            <p>Famous for its pristine beaches, vibrant nightlife, and Portuguese architecture.</p>
+                            <a href="#" class="btn">Explore</a>
+                        </div>
+                    </div>
+    
+                    <div class="state-card">
+                        <img src="./src/maharashtra.jpg" alt="Maharashtra" class="state-img">
+                        <div class="state-info">
+                            <h3>Maharashtra</h3>
+                            <p>Home to bustling Mumbai, ancient caves, and the beautiful Western Ghats.</p>
+                            <a href="#" class="btn">Explore</a>
+                        </div>
+                    </div>
+    
+                    <!-- More states would be added here -->
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>India Trip Planner helps you create customized travel itineraries across all Indian states with
+                        optimized routes based on your preferences.</p>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Itineraries</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@indiatripplanner.com</li>
+                        <li>Phone: +91 98765 43210</li>
+                        <li>Address: Mumbai, Maharashtra, India</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="copyright">
+                <p>&copy; 2025 India Trip Planner. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <!-- Login Page (Hidden by default, would be shown/hidden via JavaScript) -->
+        <div class="auth-container" style="display: none;">
+            <form class="auth-form">
+                <h2>Login to Your Account</h2>
+    
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+    
+                <button type="submit" class="form-btn">Login</button>
+    
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    
+        <!-- Signup Page (Hidden by default, would be shown/hidden via JavaScript) -->
+        <div class="auth-container" style="display: none;">
+            <form class="auth-form">
+                <h2>Create an Account</h2>
+    
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="form-control" required>
+                </div>
+    
+                <button type="submit" class="form-btn">Sign Up</button>
+    
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#">Login</a></p>
+                </div>
+            </form>
+        </div>
+    
+        <!-- Itinerary Planning Page (Hidden by default, would be shown after selecting a state) -->
+        <div style="display: none;">
+            <nav>
+                <div class="container nav-container">
+                    <a href="#" class="logo">India Trip Planner</a>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Itineraries</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <button class="auth-btn">My Account</button>
+                </div>
+            </nav>
+    
+            <div class="container">
+                <h2 class="section-title">Plan Your Trip to Kerala</h2>
+    
+                <div class="planning-container">
+                    <div class="sidebar">
+                        <div class="filter-section">
+                            <h3>Filter Attractions</h3>
+    
+                            <div class="checkboxes">
+                                <label><input type="checkbox" checked> Beaches</label>
+                                <label><input type="checkbox" checked> Hill Stations</label>
+                                <label><input type="checkbox" checked> Historical Sites</label>
+                                <label><input type="checkbox" checked> Wildlife</label>
+                                <label><input type="checkbox" checked> Religious Places</label>
+                            </div>
+                        </div>
+    
+                        <div class="filter-section">
+                            <h3>Budget Range</h3>
+                            <input type="range" min="1" max="5" value="3" class="range-slider" id="budget-range">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Budget</span>
+                                <span>Luxury</span>
+                            </div>
+                        </div>
+    
+                        <div class="filter-section">
+                            <h3>Duration</h3>
+                            <select class="form-control">
+                                <option>1-3 days</option>
+                                <option selected>4-7 days</option>
+                                <option>8-14 days</option>
+                                <option>15+ days</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="main-content">
+                        <div class="places-grid">
+                            <!-- Sample places - would be dynamically generated -->
+                            <div class="place-card">
+                                <img src="/api/placeholder/280/180" alt="Munnar" class="place-img">
+                                <div class="place-info">
+                                    <h3>Munnar</h3>
+                                    <p>Beautiful hill station with tea plantations and misty mountains.</p>
+                                    <div class="place-meta">
+                                        <span>Type: Hill Station</span>
+                                        <span>Rating: 4.8/5</span>
+                                    </div>
+                                    <button class="btn">Add to Itinerary</button>
+                                </div>
+                            </div>
+    
+                            <div class="place-card">
+                                <img src="/api/placeholder/280/180" alt="Alleppey" class="place-img">
+                                <div class="place-info">
+                                    <h3>Alleppey</h3>
+                                    <p>Famous for houseboat cruises through serene backwaters.</p>
+                                    <div class="place-meta">
+                                        <span>Type: Backwaters</span>
+                                        <span>Rating: 4.7/5</span>
+                                    </div>
+                                    <button class="btn">Add to Itinerary</button>
+                                </div>
+                            </div>
+    
+                            <div class="place-card">
+                                <img src="/api/placeholder/280/180" alt="Kochi" class="place-img">
+                                <div class="place-info">
+                                    <h3>Kochi</h3>
+                                    <p>Port city with colonial architecture and Chinese fishing nets.</p>
+                                    <div class="place-meta">
+                                        <span>Type: Historical</span>
+                                        <span>Rating: 4.5/5</span>
+                                    </div>
+                                    <button class="btn">Add to Itinerary</button>
+                                </div>
+                            </div>
+    
+                            <div class="place-card">
+                                <img src="/api/placeholder/280/180" alt="Kovalam" class="place-img">
+                                <div class="place-info">
+                                    <h3>Kovalam</h3>
+                                    <p>Beautiful crescent-shaped beach with lighthouse views.</p>
+                                    <div class="place-meta">
+                                        <span>Type: Beach</span>
+                                        <span>Rating: 4.4/5</span>
+                                    </div>
+                                    <button class="btn">Add to Itinerary</button>
+                                </div>
+                            </div>
+    
+                            <!-- More places would be added here -->
+                        </div>
+    
+                        <div class="itinerary-builder">
+                            <h3>Your Itinerary</h3>
+                            <div class="selected-places">
+                                <!-- Selected places would appear here -->
+                                <div class="place-pill">
+                                    Munnar <span class="remove">×</span>
+                                </div>
+                                <div class="place-pill">
+                                    Alleppey <span class="remove">×</span>
+                                </div>
+                                <div class="place-pill">
+                                    Kochi <span class="remove">×</span>
+                                </div>
+                            </div>
+    
+                            <button class="optimize-btn">Optimize Route</button>
+                            <button class="btn">Save Itinerary</button>
+    
+                            <div class="map-container">
+                                <!-- Map would be displayed here -->
+                                <img src="/api/placeholder/800/400" alt="Map"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>India Trip Planner helps you create customized travel itineraries across all Indian states with
+                            optimized routes based on your preferences.</p>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Destinations</a></li>
+                            <li><a href="#">Itineraries</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>Email: info@indiatripplanner.com</li>
+                            <li>Phone: +91 98765 43210</li>
+                            <li>Address: Mumbai, Maharashtra, India</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="copyright">
+                    <p>&copy; 2025 India Trip Planner. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    
+        <!-- Basic JavaScript for functionality (would be more extensive in a real application) -->
+        <script>
+            // This would be expanded in a real application to include:
+            // 1. User authentication (login/signup)
+            // 2. Dynamic loading of states and destinations
+            // 3. Adding/removing places from itinerary
+            // 4. Route optimization using distance calculations
+            // 5. Integration with maps API
+            // 6. Saving and loading itineraries
+    
+            // Sample functionality for the "Add to Itinerary" buttons
+            document.addEventListener('DOMContentLoaded', function () {
+                // Sample functionality - would be expanded in real application
+                const addButtons = document.querySelectorAll('.place-card .btn');
+                const selectedPlaces = document.querySelector('.selected-places');
+    
+                addButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const placeName = this.parentNode.querySelector('h3').textContent;
+                        const pill = document.createElement('div');
+                        pill.className = 'place-pill';
+                        pill.innerHTML = `${placeName} <span class="remove">×</span>`;
+    
+                        // Add remove functionality
+                        pill.querySelector('.remove').addEventListener('click', function () {
+                            pill.remove();
+                        });
+    
+                        selectedPlaces.appendChild(pill);
+                    });
+                });
+    
+                // Optimize route button
+                const optimizeBtn = document.querySelector('.optimize-btn');
+                optimizeBtn.addEventListener('click', function () {
+                    alert('Route optimized based on shortest distances between selected destinations!');
+                    // In a real application, this would:
+                    // 1. Calculate distances between all selected places
+                    // 2. Use an algorithm (like Nearest Neighbor or similar) to find optimal route
+                    // 3. Reorder the places in the UI
+                    // 4. Update the map with the new route
+                });
+            });
+        </script>
+
+    <!-- <h1>Welcome to Travel Go</h1>
+    <p>Plan your perfect trip across India!</p>
+
+    <% if (!userId) { %>
+        <a class="btn" href="/login">Login</a>
+        <a class="btn" href="/signup">Sign Up</a>
+    <% } else { %>
+        <h2>Welcome to Your Travel Planner</h2>
+        <button class="btn" onclick="location.href='/startplanning'">Start Planning</button>
+        <button class="btn" onclick="location.href='/saved-plans'">Saved Plans</button>
+        <a href="/logout">Logout</a>
+    <% } %> -->
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= trip.trip_name %> - Rajasthan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .cta {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .cta button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cta button:hover {
+            background: #d35400;
+        }
+        .rajasthan-text {
+        font-size: 4rem; /* Large and bold */
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        
+        background: linear-gradient(45deg, #ff8c00, #ff3c00, #b30000); /* Royal Rajasthan color gradient */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; /* Makes the gradient apply only to text */
+        
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Adds depth */
+        padding: 20px;
+        }
+
+    </style>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
+        h1, h2 { color: #D2691E; }
+        .day { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 5px 0; padding: 10px; background: #f4f4f4; border-radius: 3px; cursor: grab;}
+        li.dragging { opacity: 0.5; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="rajasthan-text">Explore the Beauty of Rajasthan</div>
+   
+
+
+    <div class="container">
+        <p class="description">
+            Rajasthan, the Land of Kings, is famous for its royal palaces, majestic forts, and vibrant culture. 
+            Discover the beauty of Jaipur, Udaipur, Jaisalmer, and more!
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <img src="./src/jaipur.jpg" alt="Jaipur">
+                <h3>Jaipur - The Pink City</h3>
+                <p>Famous for Hawa Mahal, Amer Fort, and bustling markets.</p>
+            </div>
+            <div class="card">
+                <img src="./src/udaipur.jpg" alt="Udaipur">
+                <h3>Udaipur - The City of Lakes</h3>
+                <p>Experience the scenic beauty of Lake Pichola and City Palace.</p>
+            </div>
+            <div class="card">
+                <img src="./src/jaisa.jpg" alt="Jaisalmer">
+                <h3>Jaisalmer - The Golden City</h3>
+                <p>Explore the vast Thar Desert and the stunning Jaisalmer Fort.</p>
+            </div>
+            <div class="card">
+                <img src="./src/jodh.jpg" alt="Jodhpur">
+                <h3>Jodhpur - The Blue City</h3>
+                <p>Marvel at Mehrangarh Fort and the iconic blue houses.</p>
+            </div>
+            <div class="card">
+                <img src="./src/umaid.jpg" alt="Jodhpur">
+                <h3>Umaid Bhawan</h3>
+                
+                <p>"Umaid Bhawan Palace: A Majestic Blend of Royalty and Grandeur!"</p>
+            </div>
+            <div class="card">
+                <img src="./src/push.jpg" alt="Jodhpur">
+                <h3>Pushkar</h3>
+                <p>Famous for its holy Pushkar Lake, Brahma Temple, and vibrant Pushkar Camel Fair.</p>
+            </div>
+        </div>
+    </div>
+    <% if (trip) { %>
+        <h1>Trip: <%= trip ? trip.trip_name : 'No Trip Found' %></h1>
+        <h2>Destination: <%= trip ? trip.destination : '' %></h2>
+        <h2>Itinerary</h2>
+        <ul id="itinerary-list">
+            <% itinerary.forEach(function(day, index) { %>
+                <h3>Day <%= day.day_number %>: <%= day.location %></h3>
+                <ul class="day-list" data-day="<%= day.day_number %>">
+                    <% 
+                        let activities = Array.isArray(day.activities) ? day.activities : day.activities.split(','); 
+                        activities.forEach(function(activity, i) { 
+                    %>
+                        <li class="draggable" draggable="true" data-activity-index="<%= i %>">
+                            <%= activity.trim() %>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% }) %>
+        </ul>
+
+        <button id="save-order">Save Order</button>
+        <a href="/">
+            <button>Back to Home</button>
+        </a>
+    <% } else { %>
+        <h2>No Rajasthan Trip Found</h2>
+    <% } %>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.day-list').forEach(dayList => {
+                new Sortable(dayList, {
+                    animation: 150,
+                    group: 'shared',
+                    ghostClass: 'sortable-ghost',
+                    onEnd: () => {
+                        console.log("Reordered activities!");
+                    }
+                });
+            });
+
+            document.getElementById('save-order').addEventListener('click', () => {
+                let itineraryData = [];
+
+                document.querySelectorAll('.day-list').forEach(dayList => {
+                    let dayNumber = dayList.getAttribute('data-day');
+                    let activities = [];
+                    dayList.querySelectorAll('.draggable').forEach(item => {
+                        activities.push(item.textContent.trim());
+                    });
+
+                    itineraryData.push({ day_number: dayNumber, activities: activities });
+                });
+   
+                const tripId = "<%= trip && trip.id ? trip.id : '' %>";
+
+                fetch('/save-itinerary', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ itinerary: itineraryData, tripId: tripId }) // Fix applied
+                })
+                .then(response => response.json())
+                .then(data => console.log("Success:", data))
+                .catch(error => console.error("Error:", error));
+
+            });
+        });
+    </script>
+
+</body>
+</html>

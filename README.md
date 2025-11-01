@@ -4,8 +4,6 @@
 
 ## ✨ Features
 
-## ✨ Features
-
 ✅ **User Authentication**  
 - Secure login/signup using bcrypt  
 - Session-based authentication  

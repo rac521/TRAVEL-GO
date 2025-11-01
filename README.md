@@ -4,62 +4,66 @@
 
 ## ✨ Features
 
-✅ User Authentication
-Secure login/signup using bcrypt
-Session-based authentication
-✅ Trip Management
-Create trips with destination and date selection
-Store trip data in MySQL
-✅ Dynamic Itinerary Builder
-Real-time drag-and-drop functionality (Rajasthan, Kerala pages)
-Save updated order to backend via /api/itineraries
-✅ Interactive UI
-Clean, responsive design with EJS & HTML templates
-Image-rich pages showcasing destinations
-✅ Data Persistence
-MySQL tables for users, trips, and itineraries
+## ✨ Features
+
+✅ **User Authentication**  
+- Secure login/signup using bcrypt  
+- Session-based authentication  
+
+✅ **Trip Management**  
+- Create trips with destination and date selection  
+- Store trip data in MySQL  
+
+✅ **Dynamic Itinerary Builder**  
+- Real-time drag-and-drop functionality (Rajasthan, Kerala pages)  
+- Save updated order to backend via `/api/itineraries`  
+
+✅ **Interactive UI**  
+- Clean, responsive design with EJS & HTML templates  
+- Image-rich pages showcasing destinations  
+
+✅ **Data Persistence**  
+- MySQL tables for users, trips, and itineraries
 
 ## 📁 Folder Structure
 
 Travel-Go/
 ├── public/
-│ ├── js/
-│ │ ├── kerala.js
-│ │ └── raja.js
-│ ├── src/
-│ │ ├── Alleppy.jpg
-│ │ ├── Kochi.jpg
-│ │ ├── Munnar.jpg
-│ │ ├── Thrissur.jpg
-│ │ ├── Wayanad.jpg
-│ │ ├── goa.jpg
-│ │ ├── jaipur.jpg
-│ │ ├── jaisa.jpg
-│ │ ├── jodh.jpg
-│ │ ├── kerala.jpg
-│ │ ├── kovalam.jpg
-│ │ ├── maharashtra.jpg
-│ │ ├── push.jpg
-│ │ ├── rajasthan.jpg
-│ │ ├── udaipur.jpg
-│ │ └── umaid.jpg
-│ ├── login.html
-│ ├── signup.html
-│ └── startplanning.html
+│   ├── js/
+│   │   ├── kerala.js
+│   │   └── raja.js
+│   ├── src/
+│   │   ├── Alleppy.jpg
+│   │   ├── Kochi.jpg
+│   │   ├── Munnar.jpg
+│   │   ├── Thrissur.jpg
+│   │   ├── Wayanad.jpg
+│   │   ├── goa.jpg
+│   │   ├── jaipur.jpg
+│   │   ├── jaisa.jpg
+│   │   ├── jodh.jpg
+│   │   ├── kerala.jpg
+│   │   ├── kovalam.jpg
+│   │   ├── maharashtra.jpg
+│   │   ├── push.jpg
+│   │   ├── rajasthan.jpg
+│   │   ├── udaipur.jpg
+│   │   └── umaid.jpg
+│   ├── login.html
+│   ├── signup.html
+│   └── startplanning.html
 ├── views/
-│ ├── index.ejs
-│ ├── kerala.ejs
-│ ├── rajasthan.ejs
-│ ├── trip.ejs
-│ ├── saved-itinerary.ejs
-│ ├── login.ejs
-│ └── signup.ejs
+│   ├── index.ejs
+│   ├── kerala.ejs
+│   ├── rajasthan.ejs
+│   ├── trip.ejs
+│   ├── saved-itinerary.ejs
+│   ├── login.ejs
+│   └── signup.ejs
 ├── .env
 ├── mysql-db.txt
 ├── app.js
 └── README.md
-
-
 
 ## 💻 Tech Stack
 
@@ -77,44 +81,33 @@ Travel-Go/
 
 ## ⚙️ Installation and Setup
 
-# 1️⃣ Clone the repository
-
+### 1️⃣ Clone the repository
 `git clone https://github.com/rac521/TRAVEL-GO.git`
 
-# 2️⃣ Navigate into the project folder
-
+### 2️⃣ Navigate into the project folder
 `cd TRAVEL-GO`
 
-# 3️⃣ Install dependencies
-
+### 3️⃣ Install dependencies
 `npm install express mysql2 ejs dotenv body-parser bcrypt express-session`
-
-# (Optional) Install nodemon for auto-reload during development
-
+(Optional) Install nodemon for auto-reload during development
 `npm install -g nodemon`
 
-# 4️⃣ Create a .env file in the project root and add:
-
+### 4️⃣ Create a .env file in the project root and add:
 `DB_HOST=localhost
 DB_USER=yourusername
 DB_PASSWORD=yourpassword
 DB_NAME=india_trip_planner
 PORT=3000`
 
-# 5️⃣ Import the MySQL database
+### 5️⃣ Import the MySQL database
+Open MySQL and import the script from mysql-db.txt
 
-# Open MySQL and import the script from mysql-db.txt
-
-# 6️⃣ Start the application
-
+### 6️⃣ Start the application
 `node app.js`
-
-# or
-
+or
 `nodemon app.js`
 
-# 7️⃣ Open the app in your browser
-
+### 7️⃣ Open the app in your browser
 `http://localhost:3000`
 
 ## 🚀 Usage

@@ -26,7 +26,7 @@
 - MySQL tables for users, trips, and itineraries
 
 ## 📁 Folder Structure
-
+```
 Travel-Go/
 ├── public/
 │   ├── js/
@@ -64,7 +64,7 @@ Travel-Go/
 ├── mysql-db.txt
 ├── app.js
 └── README.md
-
+```
 ## 💻 Tech Stack
 
 ### 🎨 Frontend
